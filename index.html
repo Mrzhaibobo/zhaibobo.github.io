@@ -1,37 +1,269 @@
-## Welcome to GitHub Pages
+﻿
 
-You can use the [editor on GitHub](https://github.com/Mrzhaibobo/zhaibobo.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>生活首页</title>
+<link href="index/style/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="index/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="index/js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="index/js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+    var $ww = $(window).width();
+	$.fn.fullpage({
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+		navigation: true
+	});
+    $(window).resize(function(){
+        autoScrolling();
+		$(this).setScrollingSpeed(200);
+    });
+    function autoScrolling(){
+        if($ww < 1024){
+            $.fn.fullpage.setAutoScrolling(false);
+			$(".tableCell,.section").css("height","700px");
+			$(".copyright").css("height","230px");
+        } else {
+            $.fn.fullpage.setAutoScrolling(true);
+        }
+    }
+    autoScrolling();
+});
+</script>
+</head>
+<body>
+    <div id="s1" class="section section1">
+        
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+<script type="text/javascript" src="index/js/jquery.bxslider.min.js"></script>
+<script src="js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="public/style/top.css">
+<div class="topbar">
+    <div class="wp clearfix"> 
+        <a href="" class="logo l"></a>
+        <ul id="nav" class="topnav l">
+            <li><a href="">首页</a></li>
+            <li><a href="0311/">城市</a></li>
+            <li><a href="0311/sq/">社区</a></li>
+            <li><a href="0311/free/">体验Free</a></li>
+            <!-- <li><a href="">app下载</a></li> -->
+        </ul>
+        
+        <div class="nav_tx r">
+        	
+            <!--未登录 start-->
+            <a class="nav_tx_img" href="javascript:;"><img src="public/images/tx.png" alt="" /></a>
+            <div class="dl_begin_box">
+            	<a class="nav_dl" href="javascript:;">登录</a>
+                <a class="nav_zc" href="register.html" rel="nofollow">注册</a>
+            </div>
+            
+            <!--未登录 end-->
+            
+            <!--已登录 start-->
+            
+            <!--已登录 end-->
+            
+            <!--登录框 start-->
+            <div class="drop">
+	            <input type="text" name="username" class="required" id="topUsername" placeholder="手机号码或邮箱">
+	            <input type="password" name="password" id="topPassword"  placeholder="密码">
+	            <p class="remember"><input type="checkbox" class="checkbox">记住密码</p>
+	            <p class="pass_last"><a href="#" class="tooltip">忘记密码了吗？<span>点击我帮您找回来！</span></a></p>
+	            <input type="submit" name="submit" value="登 录" id="hydl" onclick="topLogin();">
+                <span>关闭</span>
+                <div class="clear"></div>
+	        </div>
+            <!--登录框 end-->
+        </div>
+        <div class="nav_search r">
+            <input class="search_text" type="text" placeholder="Search" />
+            <input class="search_btn" type="button" />
+        </div>
+    </div>
+</div>
 
-[Link](url) and ![Image](src)
-```
+<div class="mid_box">
+	<div class="bla_bg"></div>
+	<div class="drop mid_drop">
+         <input type="text" name="username" class="required" id="midUsername" placeholder="手机号码或邮箱">
+         <input type="password" name="password" id="midPassword"  placeholder="密码">
+         <p class="remember"><input type="checkbox" class="checkbox">记住密码</p>
+         <p class="pass_last"><a href="#" class="tooltip">忘记密码了吗？<span>点击我帮您找回来！</span></a></p>
+         <input class="mar_top" type="submit" name="submit" value="登 录" id="midhydl" onclick="midLogin();">
+         <input class="mar_zc" type="button" value="注册" id="">
+            <span>关闭</span>
+            <div class="clear"></div>
+     </div>
+</div>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+<script type="text/javascript">
+	$(function(){
+		$(".nav_tx_img").click(function(){
+			if(""){
+				$(".dl_after_box").show();
+			}else{
+				$(".dl_begin_box").show();
+			}
+		});
+		$(".nav_dl").click(function(){
+			$(".drop").show();
+		})
+		$(".drop span").click(function(){
+			$(".drop").hide();
+			$(".dl_begin_box").hide();
+		})
+		$(".mid_drop span").click(function(){
+			$(".mid_box").hide();
+		})
+	})
+</script>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Mrzhaibobo/zhaibobo.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+
+        <ul class="life_ban">
+        	<li class="wp_first00"></li>
+            <li class="wp_first01"></li>
+            <li class="wp_first02"></li>
+            <li class="wp_first03"></li>
+        </ul>
+    </div>
+    <div id="s2" class="section section2">
+        <div class="wp wp_two">
+            <div class="wp_two_con">
+                <h2 class="life_h2">让你的生活再多一点精彩</h2>
+                <h3>城市生活触手可及</h3>
+                <p>生活需要不断的尝试新事物，我们认为只有在切身体验中才能发觉其中的乐趣，我们为您准备了各种免费体验的活动，人人都有机会体验，我们要的不是纯粹的吃货、玩货，我们会选择最适合，最真诚的，是真正懂得生活的人。</p>
+                <a class="enter_city" href="0311/">进入我的城市</a>
+            </div>
+            <div class="clearfix city_xm">
+            	<a class="l ms_a" href="0311/list1-0-0-1/"><img src="index/images/meishi.png" alt="" /><span>美食</span></a>
+                <a class="l yl_a" href="0311/list13-0-0-1/"><img src="index/images/yule.png" alt="" /><span>娱乐休闲</span></a>
+                <a class="l mj_a" href="0311/list45-0-0-1/"><img src="index/images/meijing.png" alt="" /><span>美景</span></a>
+                <a class="l xx_a" href="0311/list49-0-0-1/"><img src="index/images/xiuxi.png" alt="" /><span>休息</span></a>
+                <a class="l gw_a" href="0311/list52-0-0-1/"><img src="index/images/gouwu.png" alt="" /><span>购物</span></a>
+                <a class="l yd_a" href="0311/list31-0-0-1/"><img src="index/images/yundong.png" alt="" /><span>运动健身</span></a>
+                <a class="l sh_a" href="0311/list57-0-0-1/"><img src="index/images/shenghuo.png" alt="" /><span>生活服务</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="s3" class="section section3">
+        <div class="wp wp_three">
+            <h2 class="life_h2">周边生活  一键搜罗</h2>
+            <h3>快速解决生活琐事</h3>
+            <p>在这里您您可以方便的找到您身边的各种商户，让您足不出户的解决您的生活琐事。</p>
+            <a class="enter_sq" href="0311/sq/">走进社区</a>
+            <img class="sq_map" src="index/images/sq_map.png" alt="" />
+            <div class="sq_btn clearfix">
+            	<a class="sq_btn01" href="0311/sq/"><span></span><i>家政维修</i></a>
+                <a class="sq_btn02" href="0311/sq/"><span></span><i>送水上门</i></a>
+                <a class="sq_btn03" href="0311/sq/"><span></span><i>超市送货</i></a>
+                <a class="sq_btn04" href="0311/sq/"><span></span><i>餐饮娱乐</i></a>
+                <a class="sq_btn05" href="0311/sq/"><span></span><i>社区医疗</i></a>
+                <a class="sq_btn06" href="0311/sq/"><span></span><i>保姆育婴</i></a>
+            </div>
+        </div>
+    </div>
+    <div id="s4" class="section section4">
+        <div class="wp wp_four">
+            <div class="app_div">
+            	<a href=""><img src="index/images/apple_app.png" alt="" /></a>
+                <a href=""><img src="index/images/and.png" alt="" /></a>
+                <p>扫描二维码直接下载易事生活网客户端</p>
+                <img src="index/images/ewm.png" alt="易事二维码" />
+            </div>
+        </div>
+    </div>
+	<div id="s5" class="Newfooter pager section">
+        <div class="wp cl NewfooterIn">
+            <h2>了解易事其他服务</h2>
+            <div class="other_serive clearfix">
+                <a class="serive_btn01" href="http://ibeauty.essh.cn/"><span></span><i>易事整形</i></a>
+	            <a class="serive_btn02" href="http://ihealth.essh.cn/"><span></span><i>易事健康</i></a>
+	            <a class="serive_btn03" href="http://ibaby.essh.cn/"><span></span><i>易事育儿</i></a>
+	            <a class="serive_btn04" href="http://iep.essh.cn/"><span></span><i>易派咨询</i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="copyrightIn wp clearfix">
+            	<dl class="copyright_con l">
+                	<dt>关于我们</dt>
+                    <dd>
+                    	<a href="about/">关于易事</a>
+                        <a href="contactus/">联系我们</a>
+                        <a href="customer/">加入我们</a>
+                    </dd>
+                </dl>
+                <dl class="copyright_con l">
+                	<dt>帮助中心</dt>
+                    <dd>
+                    	<a href="">玩转易事</a>
+                        <a href="feedback/">建议反馈</a>
+                        <a href="customer/">申请合作</a>
+                    </dd>
+                </dl>
+                <dl class="copyright_con l">
+                	<dt>关于体验</dt>
+                    <dd>
+                    	<a href="">有哪些体验</a>
+                        <a href="">为何免费</a>
+                        <a href="">是否黑幕</a>
+                        <a href="">体验官解释</a>
+                        <a href="">如何挑选</a>
+                    </dd>
+                </dl>
+                <dl class="copyright_con l">
+                	<dt>网站条款</dt>
+                    <dd>
+                    	<a href="">会员条款</a>
+                        <a href="">体验官条款</a>
+                        <a href="">版权声明</a>
+                    </dd>
+                </dl>
+                <dl class="l share_con">
+                	<dt>关注我们</dt>
+                    <dd>
+                    	<div class="share_con">
+                            <div class="bshare-custom icon-medium-plus">
+                                <a title="分享到QQ空间" class="bshare-qzone" style="width:44px;height:45px;background:url(images/zone_btn.png) no-repeat center center;padding:0;margin-right:5px;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;"></a>
+                                <a title="分享到新浪微博" class="bshare-sinaminiblog" style="width:44px;height:45px;background:url(images/sina_btn.png) no-repeat center center;padding:0;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;"></a>
+                            </div>
+                            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+                            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                        </div>
+                    </dd>
+                </dl>
+                <p class="clear"></p>
+                <div class="foot_bot">冀ICP备13005388号-2 CopyRight©2012-2013 <a href="">www.essh.cn</a>  版权所有   河北易派企业管理咨询有限公司</div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="index/js/jquery.bxslider.min.js"></script>    
+<script type="text/javascript">
+jQuery(function($) {
+	$('.life_ban').bxSlider({
+		infiniteLoop:false,
+		controls:true,
+		pager:false,
+		minSlides: 1,
+		maxSlides: 1,
+		//slideWidth: 1440,
+		slideMargin: 0
+	});
+	
+});
+</script>
+</body>
+</html>
